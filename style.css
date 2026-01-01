@@ -5,6 +5,7 @@
     font-family: 'Comic Sans MS', cursive;
 }
 
+/* Pages */
 .page {
     width: 100vw;
     height: 100vh;
@@ -12,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 .hidden {
@@ -28,8 +30,8 @@
 }
 
 @keyframes rainbow {
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
+    from { filter: hue-rotate(0deg); }
+    to { filter: hue-rotate(360deg); }
 }
 
 /* Pink background */
@@ -39,7 +41,7 @@
 
 /* Password box */
 .password-box {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255,255,255,0.9);
     padding: 30px;
     border-radius: 15px;
     text-align: center;
@@ -54,8 +56,8 @@
 .password-box button {
     padding: 10px 20px;
     background: hotpink;
-    color: white;
     border: none;
+    color: white;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -87,6 +89,7 @@ textarea {
     width: 120px;
     position: fixed;
     animation: float 3s ease-in-out infinite;
+    z-index: 4;
 }
 
 .top-left {
@@ -100,16 +103,25 @@ textarea {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
+    0%,100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
 }
 
-/* Floating hearts & sparkles */
-.effect {
+/* Effects */
+#effects {
     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.effect {
+    position: absolute;
     font-size: 22px;
     animation: fall 6s linear infinite;
-    pointer-events: none;
 }
 
 @keyframes fall {
@@ -122,4 +134,5 @@ textarea {
         opacity: 0;
     }
 }
+
 
