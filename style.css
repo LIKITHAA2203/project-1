@@ -5,41 +5,52 @@
     font-family: 'Comic Sans MS', cursive;
 }
 
-/* Pages */
+/* PAGES (BACKGROUND LAYER) */
 .page {
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 1; /* BACKGROUND */
 }
 
 .hidden {
     display: none;
 }
 
-/* Rainbow background */
+/* RAINBOW BACKGROUND */
 .rainbow-bg {
     background: linear-gradient(
-        45deg,
-        red, orange, yellow, green, blue, indigo, violet
+        270deg,
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        violet,
+        red
     );
-    animation: rainbow 8s linear infinite;
+    background-size: 800% 800%;
+    animation: rainbowMove 6s ease infinite;
 }
 
-@keyframes rainbow {
-    from { filter: hue-rotate(0deg); }
-    to { filter: hue-rotate(360deg); }
+@keyframes rainbowMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* Pink background */
+/* PINK PAGE */
 .pink-bg {
     background: pink;
 }
 
-/* Password box */
+/* PASSWORD BOX */
 .password-box {
     background: rgba(255,255,255,0.9);
     padding: 30px;
@@ -62,11 +73,7 @@
     cursor: pointer;
 }
 
-#error {
-    margin-top: 10px;
-}
-
-/* Letter */
+/* LETTER */
 .letter {
     background: #fff0f5;
     padding: 30px;
@@ -84,12 +91,34 @@ textarea {
     font-size: 16px;
 }
 
-/* Dolls */
+/* SPARKLES & HEARTS (ABOVE BACKGROUND) */
+#effects {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 5; /* ABOVE RAINBOW */
+}
+
+.effect {
+    position: absolute;
+    font-size: 22px;
+    animation: fall 6s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-50px); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* DOLLS (TOPMOST LAYER) */
 .doll {
     width: 120px;
     position: fixed;
     animation: float 3s ease-in-out infinite;
-    z-index: 4;
+    z-index: 10; /* VERY TOP */
 }
 
 .top-left {
@@ -107,32 +136,6 @@ textarea {
     50% { transform: translateY(-10px); }
 }
 
-/* Effects */
-#effects {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 3;
-}
-
-.effect {
-    position: absolute;
-    font-size: 22px;
-    animation: fall 6s linear infinite;
-}
-
-@keyframes fall {
-    0% {
-        transform: translateY(-50px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-}
 
 
+  
