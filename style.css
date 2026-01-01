@@ -1,17 +1,7 @@
 body {
   margin: 0;
   font-family: 'Cursive', sans-serif;
-  /* Rainbow gradient background */
-  background: linear-gradient(
-    135deg,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet
-  );
+  background: linear-gradient(135deg, red, orange, yellow, green, blue, indigo, violet);
   background-size: 400% 400%;
   animation: rainbowBG 15s ease infinite;
 }
@@ -28,12 +18,10 @@ body {
   height: 100vh;
   text-align: center;
   padding-top: 80px;
-  overflow: hidden; /* keep hearts/sparkles inside */
+  overflow: hidden;
 }
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
 /* Dolls */
 .doll {
@@ -42,15 +30,32 @@ body {
   height: auto;
 }
 
-.doll.top-left {
-  top: 10px;
-  left: 10px;
+/* Floating up/down */
+.floating {
+  animation: floatDoll 3s ease-in-out infinite;
 }
 
-.doll.bottom-right {
-  bottom: 10px;
-  right: 10px;
+@keyframes floatDoll {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
 }
+
+/* Swaying side-to-side */
+.swaying {
+  animation: swayDoll 4s ease-in-out infinite alternate;
+}
+
+@keyframes swayDoll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(15px); }
+}
+
+/* Corner positions */
+.doll.top-left { top: 10px; left: 10px; }
+.doll.bottom-right { bottom: 10px; right: 10px; }
+.doll.top-right { top: 10px; right: 10px; }
+.doll.bottom-left { bottom: 10px; left: 10px; }
 
 /* Letter styling */
 .letter {
@@ -91,6 +96,3 @@ body {
   50% { opacity: 1; transform: scale(1.2); }
   100% { transform: translateY(-10vh) scale(0.8); opacity: 0; }
 }
-
-
-
