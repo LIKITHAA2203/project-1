@@ -1,16 +1,34 @@
 body {
   margin: 0;
   font-family: 'Cursive', sans-serif;
-  background: #ffe6f0;
+  /* Rainbow gradient background */
+  background: linear-gradient(
+    135deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-size: 400% 400%;
+  animation: rainbowBG 15s ease infinite;
 }
 
-/* Screen setup */
+@keyframes rainbowBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .screen {
   position: relative;
   width: 100%;
   height: 100vh;
   text-align: center;
   padding-top: 80px;
+  overflow: hidden; /* keep hearts/sparkles inside */
 }
 
 .hidden {
@@ -20,7 +38,7 @@ body {
 /* Dolls */
 .doll {
   position: absolute;
-  width: 150px;   /* bigger size */
+  width: 150px;
   height: auto;
 }
 
@@ -36,8 +54,8 @@ body {
 
 /* Letter styling */
 .letter {
-  background: #fff8dc; /* parchment-like */
-  border: 2px solid #d4af37; /* golden border */
+  background: #fff8dc;
+  border: 2px solid #d4af37;
   padding: 20px;
   margin: 40px auto;
   width: 70%;
@@ -47,12 +65,11 @@ body {
   border-radius: 10px;
 }
 
-/* Floating hearts */
+/* Hearts */
 .heart {
   position: absolute;
-  color: red;
   font-size: 24px;
-  animation: floatUp 6s infinite;
+  animation: floatUp 6s linear forwards;
 }
 
 @keyframes floatUp {
@@ -60,3 +77,20 @@ body {
   50% { opacity: 1; }
   100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
 }
+
+/* Sparkles */
+.sparkle {
+  position: absolute;
+  color: gold;
+  font-size: 12px;
+  animation: sparkleFloat 4s linear forwards;
+}
+
+@keyframes sparkleFloat {
+  0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { transform: translateY(-10vh) scale(0.8); opacity: 0; }
+}
+
+
+
