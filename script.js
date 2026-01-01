@@ -1,8 +1,8 @@
 function checkPassword() {
-    const password = document.getElementById("password").value;
+    const pwd = document.getElementById("password").value;
     const error = document.getElementById("error");
 
-    if (password === "LADDU") {
+    if (pwd === "LADDU") {
         document.getElementById("page1").classList.add("hidden");
         document.getElementById("page2").classList.remove("hidden");
     } else {
@@ -11,13 +11,13 @@ function checkPassword() {
     }
 }
 
-/* Floating hearts and sparkles */
+/* Sparkles & hearts */
 const effects = document.getElementById("effects");
 const symbols = ["💖", "✨", "💗", "💫", "❤️"];
 
 setInterval(() => {
     const span = document.createElement("span");
-    span.className = "effect";
+    span.classList.add("effect");
     span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
     span.style.left = Math.random() * 100 + "vw";
     span.style.animationDuration = (Math.random() * 3 + 3) + "s";
@@ -26,9 +26,5 @@ setInterval(() => {
     setTimeout(() => {
         span.remove();
     }, 6000);
-}, 300);
-
-
-
-
+}, 250);
 
