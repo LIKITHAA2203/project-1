@@ -5,7 +5,7 @@ function checkPassword() {
   const error = document.getElementById("error");
   const music = document.getElementById("bgMusic");
 
-  if (password === "LADDU") { // <-- set your password here
+  if (password == "LADDU") { // <-- set your password here
     lockScreen.classList.add("hidden");
     messageScreen.classList.remove("hidden");
     music.play();
@@ -53,6 +53,7 @@ function startSparkles() {
     }, 5000);
   }, 400);
 }
+
 
 
 
