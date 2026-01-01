@@ -1,1 +1,66 @@
+/* Dolls */
+.doll {body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Rainbow background */
+.rainbow {
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, violet);
+  background-size: 1000% 1000%;
+  animation: rainbow 10s ease infinite;
+}
+
+@keyframes rainbow {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
+}
+
+.pink {
+  background: pink;
+}
+
+
+  animation: float 3s ease-in-out infinite;
+}
+
+.big {
+  width: 200px;
+}
+
+.small {
+  width: 120px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+.letter {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 80%;
+  font-weight: bold;
+}
+
 
