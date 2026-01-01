@@ -1,18 +1,19 @@
 function checkPassword() {
-  const passwordInput = document.getElementById("password").value;
-  const error = document.getElementById("error");
+  const password = document.getElementById("password").value;
   const lockScreen = document.getElementById("lockScreen");
   const messageScreen = document.getElementById("messageScreen");
+  const error = document.getElementById("error");
   const music = document.getElementById("bgMusic");
 
-  if (passwordInput === "LADDU") {
+  if (password === "laddu19") { // <-- set your password here
     lockScreen.classList.add("hidden");
     messageScreen.classList.remove("hidden");
     music.play();
   } else {
-    error.innerText = "WRONG PASSWORD 💔";
+    error.textContent = "Wrong password 💔";
   }
 }
+
 
 
 
