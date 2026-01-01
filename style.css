@@ -1,44 +1,125 @@
-/* Hearts falling */
-.heart {
-  position: absolute;
-  font-size: 24px;
-  animation: fallDown 6s linear forwards;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive;
 }
 
-@keyframes fallDown {
-  0% { transform: translateY(-10vh) scale(0.8); opacity: 0; }
-  50% { opacity: 1; }
-  100% { transform: translateY(100vh) scale(1.2); opacity: 0; }
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Sparkles falling */
-.sparkle {
-  position: absolute;
-  font-size: 20px;
-  animation: sparkleFall 4s linear forwards;
+.hidden {
+    display: none;
 }
 
-@keyframes sparkleFall {
-  0% { transform: translateY(-10vh) scale(0.5); opacity: 0; }
-  50% { opacity: 1; transform: scale(1.2); }
-  100% { transform: translateY(100vh) scale(0.8); opacity: 0; }
+/* Rainbow background */
+.rainbow-bg {
+    background: linear-gradient(
+        45deg,
+        red, orange, yellow, green, blue, indigo, violet
+    );
+    animation: rainbow 8s linear infinite;
 }
 
-/* Heart transition overlay */
-#transitionOverlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(255, 192, 203, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 100px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1s ease;
-  z-index: 9999;
+@keyframes rainbow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
 }
-#transitionOverlay.show {
-  opacity: 1;
+
+/* Pink background */
+.pink-bg {
+    background: pink;
 }
+
+/* Password box */
+.password-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.password-box input {
+    padding: 10px;
+    width: 200px;
+    margin: 10px 0;
+}
+
+.password-box button {
+    padding: 10px 20px;
+    background: hotpink;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#error {
+    margin-top: 10px;
+}
+
+/* Letter */
+.letter {
+    background: #fff0f5;
+    padding: 30px;
+    border-radius: 20px;
+    width: 70%;
+    max-width: 500px;
+}
+
+textarea {
+    width: 100%;
+    height: 220px;
+    border: none;
+    resize: none;
+    background: transparent;
+    font-size: 16px;
+}
+
+/* Dolls */
+.doll {
+    width: 120px;
+    position: fixed;
+    animation: float 3s ease-in-out infinite;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Floating hearts & sparkles */
+.effect {
+    position: fixed;
+    font-size: 22px;
+    animation: fall 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
