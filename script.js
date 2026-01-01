@@ -4,27 +4,24 @@ function checkPassword() {
   const messageScreen = document.getElementById("messageScreen");
   const error = document.getElementById("error");
   const music = document.getElementById("bgMusic");
+  const overlay = document.getElementById("transitionOverlay");
 
   if (password == "LADDU") { // <-- set your password here
-    lockScreen.classList.add("hidden");
-    messageScreen.classList.remove("hidden");
-    music.play(); // start music automatically
+    // Show heart transition
+    overlay.classList.add("show");
+
+    setTimeout(() => {
+      overlay.classList.remove("show");
+      lockScreen.classList.add("hidden");
+      messageScreen.classList.remove("hidden");
+      music.play();
+    }, 1500); // transition duration
   } else {
     error.textContent = "Wrong password 💔";
   }
 }
 
-// Toggle music manually
-document.getElementById("musicToggle").addEventListener("click", () => {
-  const music = document.getElementById("bgMusic");
-  if (music.paused) {
-    music.play();
-  } else {
-    music.pause();
-  }
-});
-
-// Hearts
+// Hearts falling
 function startHearts() {
   const colors = ["❤️","💖","💕","💘","💓"];
   setInterval(() => {
@@ -39,7 +36,7 @@ function startHearts() {
   }, 500);
 }
 
-// Sparkles
+// Sparkles falling
 function startSparkles() {
   const sparkles = ["✨","🌟","💫"];
   setInterval(() => {
@@ -57,4 +54,5 @@ function startSparkles() {
 // Start animations immediately
 startHearts();
 startSparkles();
+
 
