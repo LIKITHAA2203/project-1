@@ -73,7 +73,7 @@ body {
 /* Hearts */
 .heart {
   position: absolute;
-  font-size: 24px;
+  font-size: 26px;
   animation: floatUp 6s linear forwards;
 }
 
@@ -87,7 +87,7 @@ body {
 .sparkle {
   position: absolute;
   color: gold;
-  font-size: 12px;
+  font-size: 16px;
   animation: sparkleFloat 4s linear forwards;
 }
 
@@ -96,3 +96,4 @@ body {
   50% { opacity: 1; transform: scale(1.2); }
   100% { transform: translateY(-10vh) scale(0.8); opacity: 0; }
 }
+
