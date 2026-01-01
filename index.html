@@ -1,62 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For My Laddu ❤️</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Secret Page 💖</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- MUSIC -->
-<audio id="bgMusic" src="music.mp3" loop></audio>
-<button id="musicToggle">🎵 Play / Pause Music</button>
+    <!-- Dolls -->
+    <img src="doll1.jpg" class="doll top-left">
+    <img src="doll2.jpg" class="doll bottom-right">
 
-<!-- PASSWORD SCREEN -->
-<div id="lockScreen" class="screen rainbow">
-  <!-- Dolls in corners -->
-  <img src="doll1.jpg" class="doll top-left floating swaying">
-  <img src="doll2.jpg" class="doll bottom-right floating swaying">
-  <img src="doll3.jpg" class="doll top-right floating swaying">
-  <img src="doll4.jpg" class="doll bottom-left floating swaying">
+    <!-- Floating effects -->
+    <div id="effects"></div>
 
-  <h2>ENTER PASSWORD 💖</h2>
-  <input type="password" id="password" placeholder="Password">
-  <button onclick="checkPassword()">OPEN 💌</button>
-  <p id="error"></p>
-</div>
+    <!-- PAGE 1 -->
+    <div id="page1" class="page rainbow-bg">
+        <div class="password-box">
+            <h2>💝 Enter Password 💝</h2>
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="checkPassword()">Unlock 💕</button>
+            <p id="error"></p>
+        </div>
+    </div>
 
-<!-- MESSAGE SCREEN -->
-<div id="messageScreen" class="screen pink hidden">
-  <div class="letter">
-    <p>
-      TO LADDUUU....<br><br>
-      HAAAAAAAAAAAAAAPPPPPPPPYYYYY 19TH BIRTHDAY LAAAAAAAAAAAAAAADDDDDDDDDDUUUUUU CHELLAMMMMMM ❤️
-      YENNAKU UNNA ROMBA PIDIKUM I LOVE YOU AS ALWAYS LADDDUUU 💕<br><br>
-      NAMBA HAPPY AH ITHAE MAARI INFINITY YEARS KU IRUKA POROM.<br><br> 
-      NAMBA SANDA PODALAM AANA NAMBA LOVE MAARATHU ENNIKUMAE.<br><br>
-      BABY MA KU UNNA ROMBA PIDIKUM EPOMAE ❤️<br><br>
-      NAA UNKITA THREE THINGS SOLLANUM:<br>
-        1. THANK YOU<br>
-        2. SORRY<br>
-        3. LOVE YOU AS ALWAYS<br><br>
-      THANK YOU VANTHUTU LADDU YEN LIFE LA VANTHATHUKU APRM SORRY 
-      VANTHUTU BABY MA PANRA THAPPUKU APRM KADAISIYA LOVE YOU AS ALWAYS
-      ITHAE MAARI LADDU VUM BABY MA VUM INUM NERAYA BDAY ONNA KONDADA POROM INUM HAPPY INUM OTTIKITU. 
-      LADDDU ILLAMA BABY MA ILA 💖
-    </p>
-  </div>
+    <!-- PAGE 2 -->
+    <div id="page2" class="page pink-bg hidden">
+        <div class="letter">
+            <h2>💌 Special Message 💌</h2>
+            <textarea readonly>
+YOUR MESSAGE WILL BE WRITTEN HERE
+(You will give this text later)
+            </textarea>
+        </div>
+    </div>
 
-  <!-- Dolls in all corners -->
-  <img src="doll1.jpg" class="doll top-left floating swaying">
-  <img src="doll2.jpg" class="doll bottom-right floating swaying">
-  <img src="doll3.jpg" class="doll top-right floating swaying">
-  <img src="doll4.jpg" class="doll bottom-left floating swaying">
-</div>
-
-<script src="script.js"></script>
-<div id="transitionOverlay">❤️</div>
+    <script src="script.js"></script>
 </body>
 </html>
-
-
 
