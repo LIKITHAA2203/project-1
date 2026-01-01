@@ -9,8 +9,6 @@ function checkPassword() {
     lockScreen.classList.add("hidden");
     messageScreen.classList.remove("hidden");
     music.play();
-    startHearts();
-    startSparkles();
   } else {
     error.textContent = "Wrong password 💔";
   }
@@ -29,9 +27,7 @@ function startHearts() {
 
     document.body.appendChild(heart);
 
-    setTimeout(() => {
-      heart.remove();
-    }, 7000);
+    setTimeout(() => { heart.remove(); }, 7000);
   }, 500);
 }
 
@@ -48,13 +44,10 @@ function startSparkles() {
 
     document.body.appendChild(sparkle);
 
-    setTimeout(() => {
-      sparkle.remove();
-    }, 5000);
+    setTimeout(() => { sparkle.remove(); }, 5000);
   }, 400);
 }
 
-
-
-
-
+// Start hearts and sparkles immediately on both screens
+startHearts();
+startSparkles();
