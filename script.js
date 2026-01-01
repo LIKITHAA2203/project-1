@@ -8,13 +8,23 @@ function checkPassword() {
   if (password == "LADDU") { // <-- set your password here
     lockScreen.classList.add("hidden");
     messageScreen.classList.remove("hidden");
-    music.play();
+    music.play(); // start music automatically
   } else {
     error.textContent = "Wrong password 💔";
   }
 }
 
-// Generate endless hearts
+// Toggle music manually
+document.getElementById("musicToggle").addEventListener("click", () => {
+  const music = document.getElementById("bgMusic");
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+});
+
+// Hearts
 function startHearts() {
   const colors = ["❤️","💖","💕","💘","💓"];
   setInterval(() => {
@@ -24,14 +34,12 @@ function startHearts() {
     heart.style.left = Math.random() * 90 + "%";
     heart.style.fontSize = (20 + Math.random() * 20) + "px";
     heart.style.animationDuration = (4 + Math.random() * 3) + "s";
-
     document.body.appendChild(heart);
-
-    setTimeout(() => { heart.remove(); }, 7000);
+    setTimeout(() => heart.remove(), 7000);
   }, 500);
 }
 
-// Generate endless sparkles
+// Sparkles
 function startSparkles() {
   const sparkles = ["✨","🌟","💫"];
   setInterval(() => {
@@ -41,13 +49,12 @@ function startSparkles() {
     sparkle.style.left = Math.random() * 90 + "%";
     sparkle.style.fontSize = (10 + Math.random() * 15) + "px";
     sparkle.style.animationDuration = (3 + Math.random() * 2) + "s";
-
     document.body.appendChild(sparkle);
-
-    setTimeout(() => { sparkle.remove(); }, 5000);
+    setTimeout(() => sparkle.remove(), 5000);
   }, 400);
 }
 
-// Start hearts and sparkles immediately on both screens
+// Start animations immediately
 startHearts();
 startSparkles();
+
